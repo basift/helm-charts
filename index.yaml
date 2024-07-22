@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  kured-reboot:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-07-21T21:12:29.2413151-04:00"
+    description: A Helm chart for Kured reboot CronJob
+    digest: 716aff9ebcfd654029f86a0de2083f51280b969fc3b4bbe346fd32824fb0608c
+    maintainers:
+    - email: grey11ster@gmail.com
+      name: Sergey Efimovskiy
+    name: kured-reboot
+    sources:
+    - https://github.com/basift/helm-charts/charts/tree/main/kured-reboot
+    urls:
+    - https://github.com/basift/helm-charts/releases/download/kured-reboot-0.1.0/kured-reboot-0.1.0.tgz/kured-reboot-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-21T21:12:29.228362-04:00"
