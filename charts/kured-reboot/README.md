@@ -9,10 +9,22 @@ This Helm chart provides a way to automatically trigger node reboots in a Kubern
 
 ## Installing the Chart
 
+First, add the Helm repository:
+
+```bash
+helm repo add kured-reboot https://basift.github.io/helm-charts/kured-reboot
+```
+
+Then, update the repository:
+
+```bash
+helm repo update
+```
+
 To install the chart with the release name `my-release`, run the following command:
 
 ```bash
-helm install my-release basift/kured-reboot
+helm install my-release kured-reboot/kured-reboot
 ```
 
 ## Uninstalling the Chart
@@ -38,7 +50,7 @@ The following table lists the configurable parameters of the `kured-reboot` char
 You can override the default values by providing a YAML file with the desired configuration during installation:
 
 ```bash
-helm install my-release basift/kured-reboot -f values.yaml
+helm install my-release kured-reboot/kured-reboot -f values.yaml
 ```
 
 ## How It Works
@@ -63,4 +75,4 @@ Rebooting nodes in a Kubernetes cluster can have an impact on running workloads.
 
 ## License
 
-This chart is released under the [MIT License](LICENSE).
+This chart is released under the [Apache License 2.0](LICENSE).
