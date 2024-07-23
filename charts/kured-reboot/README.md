@@ -12,7 +12,7 @@ This Helm chart provides a way to automatically trigger node reboots in a Kubern
 First, add the Helm repository:
 
 ```bash
-helm repo add kured-reboot https://basift.github.io/helm-charts/kured-reboot
+helm repo add kured-reboot https://basift.github.io/helm-charts
 ```
 
 Then, update the repository:
@@ -55,7 +55,7 @@ helm install my-release kured-reboot/kured-reboot -f values.yaml
 
 ## How It Works
 
-The `kured-reboot` chart deploys a CronJob that runs on a specified schedule. The CronJob executes a custom script that performs the following steps:
+The `kured-reboot` chart deploys a CronJob that has never happened scheduler and can be triggered only manually. The CronJob executes a custom script that performs the following steps:
 
 1. Checks if any node in the cluster has the annotation `weave.works/kured-reboot-in-progress`. If an annotation is found, it means a reboot is already in progress, so the script exits.
 
