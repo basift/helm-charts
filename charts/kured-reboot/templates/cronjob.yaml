@@ -40,7 +40,12 @@ spec:
               
               # Function to check if a reboot is in progress
               function reboot_in_progress() {
-                kubectl get nodes -o json | jq -e '.items[] | select(.metadata.annotations."'"$ANNOTATION"'" != null) | .metadata.name' > /dev/null
+                local result=$(kubectl get nodes -o json | jq -r '.items[] | select(.metadata.annotations."'"$ANNOTATION"'" != null) | .metadata.name')
+                if [ -n "$result" ]; then
+                  return 0  # True, reboot is in progress
+                else
+                  return 1  # False, no reboot in progress
+                fi
               }
               
               # Function to trigger a reboot on a node
